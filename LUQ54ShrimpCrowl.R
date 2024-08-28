@@ -6,7 +6,7 @@
 # Contact:  Todd Crowl -    - tcrowl@fiu.edu
 # Stylesheet v2.11 for metadata conversion into program: John H. Porter, Univ. Virginia, jporter@virginia.edu 
 
-inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945759/63afd355201f7cf44912b02583ffc7c9" 
+inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945760/63afd355201f7cf44912b02583ffc7c9"
 infile1 <- tempfile()
 try(download.file(inUrl1,infile1,method="curl"))
 if (is.na(file.size(infile1))) download.file(inUrl1,infile1,method="auto")
@@ -60,7 +60,7 @@ summary(as.factor(dt1$XIPHCPUE))
 detach(dt1)               
 
 
-inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945759/34d8e469e9858e13a71eb04a2eb42993" 
+inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945760/34d8e469e9858e13a71eb04a2eb42993"
 infile2 <- tempfile()
 try(download.file(inUrl2,infile2,method="curl"))
 if (is.na(file.size(infile2))) download.file(inUrl2,infile2,method="auto")
@@ -114,7 +114,7 @@ summary(as.factor(dt2$XIPHCPUE))
 detach(dt2)               
 
 
-inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945759/d03686a8ed4241535874144872e69bae" 
+inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945760/d03686a8ed4241535874144872e69bae"
 infile3 <- tempfile()
 try(download.file(inUrl3,infile3,method="curl"))
 if (is.na(file.size(infile3))) download.file(inUrl3,infile3,method="auto")
@@ -168,7 +168,7 @@ summary(as.factor(dt3$XIPHCPUE))
 detach(dt3)               
 
 
-inUrl4  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945759/54e1fa5f894a6e055bf3593095f252e7" 
+inUrl4  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945760/54e1fa5f894a6e055bf3593095f252e7"
 infile4 <- tempfile()
 try(download.file(inUrl4,infile4,method="curl"))
 if (is.na(file.size(infile4))) download.file(inUrl4,infile4,method="auto")
@@ -230,7 +230,7 @@ summary(as.factor(dt4$XIPHCPUE))
 detach(dt4)               
 
 
-inUrl5  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945759/1f34629212ee85b4998c023ba0645949" 
+inUrl5  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945760/1f34629212ee85b4998c023ba0645949"
 infile5 <- tempfile()
 try(download.file(inUrl5,infile5,method="curl"))
 if (is.na(file.size(infile5))) download.file(inUrl5,infile5,method="auto")
@@ -290,7 +290,7 @@ summary(as.factor(dt5$XIPHCPUE))
 detach(dt5)               
 
 
-inUrl6  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945759/7a7a8f81d13569cb7e6dc70368399cf2" 
+inUrl6  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/54/945760/7a7a8f81d13569cb7e6dc70368399cf2"
 infile6 <- tempfile()
 try(download.file(inUrl6,infile6,method="curl"))
 if (is.na(file.size(infile6))) download.file(inUrl6,infile6,method="auto")

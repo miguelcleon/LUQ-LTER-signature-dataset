@@ -7,7 +7,7 @@
 # Contact:  Christopher Nytch -    - chris.nytch@ites.upr.edu
 # Stylesheet v2.11 for metadata conversion into program: John H. Porter, Univ. Virginia, jporter@virginia.edu 
 
-inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/88/559514/1a915cd7cda61bb87377febce75eedb2" 
+inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/88/559515/1a915cd7cda61bb87377febce75eedb2"
 infile1 <- tempfile()
 try(download.file(inUrl1,infile1,method="curl"))
 if (is.na(file.size(infile1))) download.file(inUrl1,infile1,method="auto")
@@ -73,7 +73,7 @@ summary(as.factor(pheno1edi$COMMENTS))
 detach(pheno1edi)               
 
 
-inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/88/559514/24508a05c133c4aad1187a6798dbf184" 
+inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/88/559515/e8fd3250eeaed30492228f0c0ae1518c"
 infile2 <- tempfile()
 try(download.file(inUrl2,infile2,method="curl"))
 if (is.na(file.size(infile2))) download.file(inUrl2,infile2,method="auto")

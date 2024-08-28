@@ -44,10 +44,12 @@ QPChem$SO4.hyphen.S  <- as.numeric(QPChem$SO4.hyphen.S )
 QPChem$SO4.hyphen.S[QPChem$SulfateCode == "BDL"] <- NA
 
 QPChemv2 <- QPChem %>%
-  select(Sample_Date, Cond, Cl,pH, K, Na, Mg, Ca, NO3.hyphen.N,
+  select(Sample_Date, Gage_Ht, Temp, Cond, Cl,pH, K, Na, Mg, Ca, NO3.hyphen.N,
          "NH4.hyphen.N", "PO4.hyphen.P", SO4.hyphen.S, SiO2,
   DOC, DIC, TDN, TDP, DIC, DON, TSS) %>%
   rename(Date=Sample_Date,
+            Gage_Ht_QP=Gage_Ht,
+                  Temp_QP=Temp,
          Cond_QP=Cond,
          pH_QP=pH,
          Cl_QP=Cl,
@@ -99,10 +101,12 @@ QSChem$SO4.hyphen.S[QSChem$SulfateCode == "BDL"] <- NA
 
 
 QSChemv2 <- QSChem %>%
-  select(Sample_Date, Cond, Cl,pH, K, Na, Mg, Ca, NO3.hyphen.N,
+  select(Sample_Date, Temp, Gage_Ht, Cond, Cl,pH, K, Na, Mg, Ca, NO3.hyphen.N,
          "NH4.hyphen.N", "PO4.hyphen.P", SO4.hyphen.S, SiO2,
   DOC, DIC, TDN, TDP, DIC, DON, TSS) %>%
   rename(Date=Sample_Date,
+         Gage_Ht_QS=Gage_Ht,
+         Temp_QS=Temp,
          Cond_QS=Cond,
          pH_QS=pH,
          Cl_QS=Cl,

@@ -1,5 +1,5 @@
 #shrimp post processs
-setwd("C:/Users/ml1451/OneDrive - USNH/signature datasets/")
+# setwd("C:/Users/ml1451/OneDrive - USNH/signature datasets/")
 
 source("./LUQ54ShrimpCrowl.R")
 library(lubridate)
@@ -13,6 +13,8 @@ library(lubridate)
 # make a date 
 # dt1 = Pool 0, and dt4 Pool 0
 summary(dt1)
+summary(dt4)
+head(dt1)
 print("where no date - assume the middle of the month")
 dtpool0monthly <- dt1  
 dtpool0weekly <- dt4  

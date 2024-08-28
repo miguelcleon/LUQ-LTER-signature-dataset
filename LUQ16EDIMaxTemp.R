@@ -3,8 +3,9 @@
 # Data set creator:  Alonso Ramirez - University of Puerto Rico, Rio Piedras Campus 
 # Contact:  Alonso Ramirez -  University of Puerto Rico, Rio Piedras Campus  - aramirez@ramirezlab.net
 # Stylesheet v2.11 for metadata conversion into program: John H. Porter, Univ. Virginia, jporter@virginia.edu 
-
-inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/538560/357b137c1fd346ba191765ae058b4c7a" 
+packageid <- "538564"
+inUrl1  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/",
+                  packageid, "/6d57037093afe788d023c587fac45db3")
 infile1 <- tempfile()
 try(download.file(inUrl1,infile1,method="curl"))
 if (is.na(file.size(infile1))) download.file(inUrl1,infile1,method="auto")
@@ -62,7 +63,10 @@ summary(as.factor(dt1$JULIAN))
 detach(dt1)               
 
 
-inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/538560/89d2d5fb4c21f40704171113a04ed55a" 
+# inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/538560/89d2d5fb4c21f40704171113a04ed55a"
+inUrl2  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/",
+                  packageid, "/a9438cc0be6b1d2cd793ccb912fd000c")
+
 infile2 <- tempfile()
 try(download.file(inUrl2,infile2,method="curl"))
 if (is.na(file.size(infile2))) download.file(inUrl2,infile2,method="auto")
@@ -120,62 +124,72 @@ summary(as.factor(dt2$JULIAN))
 detach(dt2)               
 
 
-inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/538560/fd089db1f85695c215309eaade0057c0" 
+# inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/538560/fd089db1f85695c215309eaade0057c0"
+
+inUrl3  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/16/",
+                  packageid, "/fd089db1f85695c215309eaade0057c0")
+
 infile3 <- tempfile()
 try(download.file(inUrl3,infile3,method="curl"))
 if (is.na(file.size(infile3))) download.file(inUrl3,infile3,method="auto")
 
 
-dt3 <-read.csv(infile3,header=F 
-               ,skip=1
-               ,sep=","  
-               , col.names=c(
-                 "DATE",     
-                 "YEAR",     
-                 "JULIAN",     
-                 "MAXTEMP.paren.F.paren.",     
-                 "MAXTEMP.paren.C.paren.",     
-                 "Field.Comments"    ), check.names=TRUE)
+ dt3 <-read.csv(infile3,header=F
+          ,skip=1
+            ,sep=","
+        , col.names=c(
+                    "DATE",
+                    "YEAR",
+                    "JULIAN",
+                    "HOUR",
+                    "MAXTEMP.paren.F.paren.",
+                    "MAXTEMP.paren.C.paren.",
+                    "Field.Comments"    ), check.names=TRUE)
 
 unlink(infile3)
 
 # Fix any interval or ratio columns mistakenly read in as nominal and nominal columns read as numeric or dates read as strings
 
-if (class(dt3$DATE)=="factor") dt3$DATE <-as.numeric(levels(dt3$DATE))[as.integer(dt3$DATE) ]               
-if (class(dt3$DATE)=="character") dt3$DATE <-as.numeric(dt3$DATE)
+tmpDateFormat<-"%Y-%m-%d"
+dt3$DATE<-as.Date(dt3$DATE,format=tmpDateFormat)
 if (class(dt3$YEAR)!="factor") dt3$YEAR<- as.factor(dt3$YEAR)
 if (class(dt3$JULIAN)!="factor") dt3$JULIAN<- as.factor(dt3$JULIAN)
-if (class(dt3$MAXTEMP.paren.F.paren.)=="factor") dt3$MAXTEMP.paren.F.paren. <-as.numeric(levels(dt3$MAXTEMP.paren.F.paren.))[as.integer(dt3$MAXTEMP.paren.F.paren.) ]               
+if (class(dt3$HOUR)!="factor") dt3$HOUR<- as.factor(dt3$HOUR)
+if (class(dt3$MAXTEMP.paren.F.paren.)=="factor") dt3$MAXTEMP.paren.F.paren. <-as.numeric(levels(dt3$MAXTEMP.paren.F.paren.))[as.integer(dt3$MAXTEMP.paren.F.paren.) ]
 if (class(dt3$MAXTEMP.paren.F.paren.)=="character") dt3$MAXTEMP.paren.F.paren. <-as.numeric(dt3$MAXTEMP.paren.F.paren.)
-if (class(dt3$MAXTEMP.paren.C.paren.)=="factor") dt3$MAXTEMP.paren.C.paren. <-as.numeric(levels(dt3$MAXTEMP.paren.C.paren.))[as.integer(dt3$MAXTEMP.paren.C.paren.) ]               
+if (class(dt3$MAXTEMP.paren.C.paren.)=="factor") dt3$MAXTEMP.paren.C.paren. <-as.numeric(levels(dt3$MAXTEMP.paren.C.paren.))[as.integer(dt3$MAXTEMP.paren.C.paren.) ]
 if (class(dt3$MAXTEMP.paren.C.paren.)=="character") dt3$MAXTEMP.paren.C.paren. <-as.numeric(dt3$MAXTEMP.paren.C.paren.)
 if (class(dt3$Field.Comments)!="factor") dt3$Field.Comments<- as.factor(dt3$Field.Comments)
 
 # Convert Missing Values to NA for non-dates
 
-dt3$MAXTEMP.paren.F.paren. <- ifelse((trimws(as.character(dt3$MAXTEMP.paren.F.paren.))==trimws("BLANK")),NA,dt3$MAXTEMP.paren.F.paren.)               
+dt3$MAXTEMP.paren.F.paren. <- ifelse((trimws(as.character(dt3$MAXTEMP.paren.F.paren.))==trimws("BLANK")),NA,dt3$MAXTEMP.paren.F.paren.)
 suppressWarnings(dt3$MAXTEMP.paren.F.paren. <- ifelse(!is.na(as.numeric("BLANK")) & (trimws(as.character(dt3$MAXTEMP.paren.F.paren.))==as.character(as.numeric("BLANK"))),NA,dt3$MAXTEMP.paren.F.paren.))
-dt3$MAXTEMP.paren.C.paren. <- ifelse((trimws(as.character(dt3$MAXTEMP.paren.C.paren.))==trimws("BLANK")),NA,dt3$MAXTEMP.paren.C.paren.)               
+dt3$MAXTEMP.paren.C.paren. <- ifelse((trimws(as.character(dt3$MAXTEMP.paren.C.paren.))==trimws("BLANK")),NA,dt3$MAXTEMP.paren.C.paren.)
 suppressWarnings(dt3$MAXTEMP.paren.C.paren. <- ifelse(!is.na(as.numeric("BLANK")) & (trimws(as.character(dt3$MAXTEMP.paren.C.paren.))==as.character(as.numeric("BLANK"))),NA,dt3$MAXTEMP.paren.C.paren.))
 
 
 # Here is the structure of the input data frame:
-str(dt3)                            
-attach(dt3)                            
-# The analyses below are basic descriptions of the variables. After testing, they should be replaced.                 
+str(dt3)
+attach(dt3)
+# The analyses below are basic descriptions of the variables. After testing, they should be replaced.
 
 summary(DATE)
 summary(YEAR)
 summary(JULIAN)
+summary(HOUR)
 summary(MAXTEMP.paren.F.paren.)
 summary(MAXTEMP.paren.C.paren.)
-summary(Field.Comments) 
-# Get more details on character variables
+summary(Field.Comments)
+                # Get more details on character variables
 
-summary(as.factor(dt3$YEAR)) 
-summary(as.factor(dt3$JULIAN)) 
+summary(as.factor(dt3$YEAR))
+summary(as.factor(dt3$JULIAN))
+summary(as.factor(dt3$HOUR))
 summary(as.factor(dt3$Field.Comments))
-detach(dt3)               
+detach(dt3)
+
+
 
 
 

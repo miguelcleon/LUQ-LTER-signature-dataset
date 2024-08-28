@@ -81,4 +81,47 @@ phenoseedsAndFlowers$Date <- as.Date(phenoseedsAndFlowers$Date, "%Y-%m-%d")
 
 print('we now have a dataframe phenoseedsAndFlowers with counts of seeds and flowers per species per day')
 
+# Show a species that has become abundant and one that has become rare
+# In decline - PALRIP shrub - seeding
+# CISVER - a vine
+# PHYRIV - understory herb hurricane response
+# IPOTL Morning glory vine - responding to hurricanes
+# SMIDOM - understory shrub is doing well  - seeding
+#
+#
+# ALCLAT
+# CASARB
+# CECSCH
+# DECEXC
+# GUAGUI
+# INGLAU
+# MANBID
+# PREMON
+# SCHMOR
+# SLOBER
+# TABHET
+# SMIDOM
+# PALRIP
+species_list <- c("PALRIP", "CISVER", "PHYRIV", "IPOTL", "SMIDOM",
+                  "ALCLAT", "CASARB", "CECSCH", "DECEXC", "GUAGUI",
+                  "INGLAU", "MANBID", "PREMON", "SCHMOR", "SLOBER",
+                  "TABHET", "SMIDOM")
+
+# Filter the dataframe for the specified species
+phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
+  filter(Plant.ID %in% species_list)
+
+
+# Pivot the data back to wide format with the species as separate columns
+phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
+  pivot_wider(
+    names_from = Plant.ID,  # Create columns based on species
+    values_from = c(seedsum, flowersum, seeds.per.m2, flowers.per.m2),  # Fill cells with the respective metrics
+    names_sep = "_"  # To differentiate between the different metrics (seedsum, flowersum, etc.)
+  )
+
+# Remove any rows with NA values if necessary
+phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
+  drop_na()
+
 summary(phenoseedsAndFlowers)

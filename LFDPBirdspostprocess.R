@@ -1,6 +1,6 @@
 # birds
 
-setwd("C:/Users/ml1451/OneDrive - USNH/signature datasets/")
+# setwd("C:/Users/ml1451/OneDrive - USNH/signature datasets/")
 
 source("./LUQ23LFDPBirds.R")
 library("lubridate") 
@@ -40,16 +40,16 @@ LFDPBirdsLessThan25m <- LFDPBirdsLessThan25m %>% mutate_at(vars(BFGRQ, ORIOL, PL
                                                                       UNWAR, WATTH, WEVIR, WWDOV, YFGRQ, YTWAR), as.numeric)
 #remove some columns 
 
-LFDPBirdsGreaterThan25m <- LFDPBirdsGreaterThan25m %>% select(-YEAR, -JULIAN,-PLACE, -DATE,-WEATHER, -PLOT1, -PLOT2, 
+LFDPBirdsGreaterThan25m <- LFDPBirdsGreaterThan25m %>% select(-YEAR, -JULIAN,-PLACE, -DATE,-WEATHER, -PLOT1, -PLOT2,
                                                               -WIND, -RAIN,-PLACE, -TIME, -firstdoy, -Field.Observer)
 
-LFDPBirdsLessThan25m <- LFDPBirdsLessThan25m %>% select(-YEAR, -JULIAN,-PLACE, -DATE,-WEATHER, -PLOT1, -PLOT2, 
+LFDPBirdsLessThan25m <- LFDPBirdsLessThan25m %>% select(-YEAR, -JULIAN,-PLACE, -DATE,-WEATHER, -PLOT1, -PLOT2,
                                                         -WIND, -RAIN,-PLACE, -TIME, -firstdoy, -Field.Observer)
 
-LFDPBirdsGreaterThan25m <-LFDPBirdsGreaterThan25m %>% pivot_longer(cols =-Date, names_to= "variable", 
-                                               values_to="value")
-LFDPBirdsLessThan25m <-LFDPBirdsLessThan25m %>% pivot_longer(cols =-Date, names_to= "variable", 
-                                                                   values_to="value")
+# LFDPBirdsGreaterThan25m <-LFDPBirdsGreaterThan25m %>% pivot_longer(cols =-Date, names_to= "variable",
+#                                                values_to="value")
+# LFDPBirdsLessThan25m <-LFDPBirdsLessThan25m %>% pivot_longer(cols =-Date, names_to= "variable",
+#                                                                  values_to="value")
 # LFDPBirds <- merge(x=LFDPBirdsGreaterThan25m, y=LFDPBirdsLessThan25m, 
 #                    by.x= "Date", by.y="Date", all.x=TRUE, )
 LFDPBirds <- rbind(LFDPBirdsGreaterThan25m,LFDPBirdsGreaterThan25m)
@@ -57,10 +57,10 @@ LFDPBirds <- rbind(LFDPBirdsGreaterThan25m,LFDPBirdsGreaterThan25m)
 # LFDPBirdsslice <- LFDPBirds %>%
 #   slice(which(Date >= "1992-03-06"))
 
-LFDPBirds <- LFDPBirds %>% group_by(Date, variable) %>% summarise(value = sum(value, na.rm = TRUE))
+# LFDPBirds <- LFDPBirds %>% group_by(Date, variable) %>% summarise(value = sum(value, na.rm = TRUE))
 
 summary(LFDPBirds)
 
-LFDPBirds <- LFDPBirds %>% rename(bird_species_LFDP=variable, bird_count_LFDP=value)
+# LFDPBirds <- LFDPBirds %>% rename(bird_species_LFDP=variable, bird_count_LFDP=value)
 # my_date <- as.Date(JULIAN,origin = as.Date(paste0(YEAR, "-01-01")))
 

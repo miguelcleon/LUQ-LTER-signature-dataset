@@ -3,8 +3,10 @@
 # Data set creator:  Alonso Ramirez - University of Puerto Rico, Rio Piedras Campus 
 # Contact:  Alonso Ramirez -  University of Puerto Rico, Rio Piedras Campus  - aramirez@ramirezlab.net
 # Stylesheet v2.11 for metadata conversion into program: John H. Porter, Univ. Virginia, jporter@virginia.edu 
-
-inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/ba356dbf5eee3f1aca674290be390f89" 
+packageid <- "573687"
+inUrl1  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/",
+                  packageid, "/ba356dbf5eee3f1aca674290be390f89")
+# inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/ba356dbf5eee3f1aca674290be390f89"
 infile1 <- tempfile()
 try(download.file(inUrl1,infile1,method="curl"))
 if (is.na(file.size(infile1))) download.file(inUrl1,infile1,method="auto")
@@ -60,7 +62,9 @@ summary(as.factor(dt1$JULIAN))
 detach(dt1)               
 
 
-inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/bce8f61cac4939aacb6979a2316716d7" 
+# inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/bce8f61cac4939aacb6979a2316716d7"
+inUrl2  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/",
+                  packageid, "/bce8f61cac4939aacb6979a2316716d7")
 infile2 <- tempfile()
 try(download.file(inUrl2,infile2,method="curl"))
 if (is.na(file.size(infile2))) download.file(inUrl2,infile2,method="auto")
@@ -116,11 +120,12 @@ summary(as.factor(dt2$JULIAN))
 detach(dt2)               
 
 
-inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/f4bab13100f9c7cd5ed6452829cf1f71" 
+# inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/f4bab13100f9c7cd5ed6452829cf1f71"
+inUrl3  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/",
+                  packageid, "/f4bab13100f9c7cd5ed6452829cf1f71")
 infile3 <- tempfile()
 try(download.file(inUrl3,infile3,method="curl"))
 if (is.na(file.size(infile3))) download.file(inUrl3,infile3,method="auto")
-
 
 dt3 <-read.csv(infile3,header=F 
                ,skip=1
@@ -172,22 +177,25 @@ summary(as.factor(dt3$JULIAN))
 detach(dt3)               
 
 
-inUrl4  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/98bfd40f2c76187aef38619df4187595" 
+# inUrl4  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/573684/98bfd40f2c76187aef38619df4187595"
+inUrl4  <- paste0("https://pasta.lternet.edu/package/data/eml/knb-lter-luq/17/",
+                  packageid, "/98bfd40f2c76187aef38619df4187595")
 infile4 <- tempfile()
 try(download.file(inUrl4,infile4,method="curl"))
 if (is.na(file.size(infile4))) download.file(inUrl4,infile4,method="auto")
 
 
-dt4 <-read.csv(infile4,header=F 
-               ,skip=1
-               ,sep=","  
-               , col.names=c(
-                 "Date",     
-                 "YEAR",     
-                 "JULIAN",     
-                 "MINTEMP.paren.F.paren.",     
-                 "MINTEMP.paren.C.paren.",     
-                 "Field.Comments"    ), check.names=TRUE)
+ dt4 <-read.csv(infile4,header=F
+          ,skip=1
+            ,sep=","
+        , col.names=c(
+                    "Date",
+                    "YEAR",
+                    "JULIAN",
+                    "HOUR",
+                    "MINTEMP.paren.F.paren.",
+                    "MINTEMP.paren.C.paren.",
+                    "Field.Comments"    ), check.names=TRUE)
 
 unlink(infile4)
 
@@ -195,41 +203,44 @@ unlink(infile4)
 
 if (class(dt4$YEAR)!="factor") dt4$YEAR<- as.factor(dt4$YEAR)
 if (class(dt4$JULIAN)!="factor") dt4$JULIAN<- as.factor(dt4$JULIAN)
-if (class(dt4$MINTEMP.paren.F.paren.)=="factor") dt4$MINTEMP.paren.F.paren. <-as.numeric(levels(dt4$MINTEMP.paren.F.paren.))[as.integer(dt4$MINTEMP.paren.F.paren.) ]               
+if (class(dt4$HOUR)!="factor") dt4$HOUR<- as.factor(dt4$HOUR)
+if (class(dt4$MINTEMP.paren.F.paren.)=="factor") dt4$MINTEMP.paren.F.paren. <-as.numeric(levels(dt4$MINTEMP.paren.F.paren.))[as.integer(dt4$MINTEMP.paren.F.paren.) ]
 if (class(dt4$MINTEMP.paren.F.paren.)=="character") dt4$MINTEMP.paren.F.paren. <-as.numeric(dt4$MINTEMP.paren.F.paren.)
-if (class(dt4$MINTEMP.paren.C.paren.)=="factor") dt4$MINTEMP.paren.C.paren. <-as.numeric(levels(dt4$MINTEMP.paren.C.paren.))[as.integer(dt4$MINTEMP.paren.C.paren.) ]               
+if (class(dt4$MINTEMP.paren.C.paren.)=="factor") dt4$MINTEMP.paren.C.paren. <-as.numeric(levels(dt4$MINTEMP.paren.C.paren.))[as.integer(dt4$MINTEMP.paren.C.paren.) ]
 if (class(dt4$MINTEMP.paren.C.paren.)=="character") dt4$MINTEMP.paren.C.paren. <-as.numeric(dt4$MINTEMP.paren.C.paren.)
 if (class(dt4$Field.Comments)!="factor") dt4$Field.Comments<- as.factor(dt4$Field.Comments)
 
 # Convert Missing Values to NA for non-dates
 
-dt4$MINTEMP.paren.F.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.F.paren.))==trimws("BLANK")),NA,dt4$MINTEMP.paren.F.paren.)               
+dt4$MINTEMP.paren.F.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.F.paren.))==trimws("BLANK")),NA,dt4$MINTEMP.paren.F.paren.)
 suppressWarnings(dt4$MINTEMP.paren.F.paren. <- ifelse(!is.na(as.numeric("BLANK")) & (trimws(as.character(dt4$MINTEMP.paren.F.paren.))==as.character(as.numeric("BLANK"))),NA,dt4$MINTEMP.paren.F.paren.))
-dt4$MINTEMP.paren.F.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.F.paren.))==trimws("-9999")),NA,dt4$MINTEMP.paren.F.paren.)               
+dt4$MINTEMP.paren.F.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.F.paren.))==trimws("-9999")),NA,dt4$MINTEMP.paren.F.paren.)
 suppressWarnings(dt4$MINTEMP.paren.F.paren. <- ifelse(!is.na(as.numeric("-9999")) & (trimws(as.character(dt4$MINTEMP.paren.F.paren.))==as.character(as.numeric("-9999"))),NA,dt4$MINTEMP.paren.F.paren.))
-dt4$MINTEMP.paren.C.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.C.paren.))==trimws("BLANK")),NA,dt4$MINTEMP.paren.C.paren.)               
+dt4$MINTEMP.paren.C.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.C.paren.))==trimws("BLANK")),NA,dt4$MINTEMP.paren.C.paren.)
 suppressWarnings(dt4$MINTEMP.paren.C.paren. <- ifelse(!is.na(as.numeric("BLANK")) & (trimws(as.character(dt4$MINTEMP.paren.C.paren.))==as.character(as.numeric("BLANK"))),NA,dt4$MINTEMP.paren.C.paren.))
-dt4$MINTEMP.paren.C.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.C.paren.))==trimws("-9999")),NA,dt4$MINTEMP.paren.C.paren.)               
+dt4$MINTEMP.paren.C.paren. <- ifelse((trimws(as.character(dt4$MINTEMP.paren.C.paren.))==trimws("-9999")),NA,dt4$MINTEMP.paren.C.paren.)
 suppressWarnings(dt4$MINTEMP.paren.C.paren. <- ifelse(!is.na(as.numeric("-9999")) & (trimws(as.character(dt4$MINTEMP.paren.C.paren.))==as.character(as.numeric("-9999"))),NA,dt4$MINTEMP.paren.C.paren.))
 
 
 # Here is the structure of the input data frame:
-str(dt4)                            
-attach(dt4)                            
-# The analyses below are basic descriptions of the variables. After testing, they should be replaced.                 
+str(dt4)
+attach(dt4)
+# The analyses below are basic descriptions of the variables. After testing, they should be replaced.
 
 summary(Date)
 summary(YEAR)
 summary(JULIAN)
+summary(HOUR)
 summary(MINTEMP.paren.F.paren.)
 summary(MINTEMP.paren.C.paren.)
-summary(Field.Comments) 
-# Get more details on character variables
+summary(Field.Comments)
+                # Get more details on character variables
 
-summary(as.factor(dt4$YEAR)) 
-summary(as.factor(dt4$JULIAN)) 
+summary(as.factor(dt4$YEAR))
+summary(as.factor(dt4$JULIAN))
+summary(as.factor(dt4$HOUR))
 summary(as.factor(dt4$Field.Comments))
-detach(dt4)               
+detach(dt4)
 
 
 

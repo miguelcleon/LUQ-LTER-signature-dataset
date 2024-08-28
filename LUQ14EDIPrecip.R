@@ -3,8 +3,14 @@
 # Data set creator:  Alonso Ramirez - University of Puerto Rico, Rio Piedras Campus 
 # Contact:  Alonso Ramirez -  University of Puerto Rico, Rio Piedras Campus  - aramirez@ramirezlab.net
 # Stylesheet v2.11 for metadata conversion into program: John H. Porter, Univ. Virginia, jporter@virginia.edu 
+library(dplyr)
+library(lubridate)
+### DONT OVERWRITE ME
+### DONT OVERWRITE ME
+### DONT OVERWRITE ME
+### DONT OVERWRITE ME
 
-inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470050/b9cc3e2f916a52d466ed5ba7304501ef" 
+inUrl1  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470058/b9cc3e2f916a52d466ed5ba7304501ef"
 infile1 <- tempfile()
 try(download.file(inUrl1,infile1,method="curl"))
 if (is.na(file.size(infile1))) download.file(inUrl1,infile1,method="auto")
@@ -54,7 +60,7 @@ summary(as.factor(dt1$JULIAN))
 detach(dt1)               
 
 
-inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470050/11fa8d2d1b848a4e3454ef0b0af0eae7" 
+inUrl2  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470058/11fa8d2d1b848a4e3454ef0b0af0eae7"
 infile2 <- tempfile()
 try(download.file(inUrl2,infile2,method="curl"))
 if (is.na(file.size(infile2))) download.file(inUrl2,infile2,method="auto")
@@ -104,7 +110,7 @@ summary(as.factor(dt2$JULIAN))
 detach(dt2)               
 
 
-inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470050/6201fb68fdfa43d3cf85101b991cc3ae" 
+inUrl3  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470058/6201fb68fdfa43d3cf85101b991cc3ae"
 infile3 <- tempfile()
 try(download.file(inUrl3,infile3,method="curl"))
 if (is.na(file.size(infile3))) download.file(inUrl3,infile3,method="auto")
@@ -154,36 +160,61 @@ summary(as.factor(dt3$JULIAN))
 detach(dt3)               
 
 
-inUrl4  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470050/598db5118d7a0f04f154044fdbffeff6" 
+inUrl4  <- "https://pasta.lternet.edu/package/data/eml/knb-lter-luq/14/470058/598db5118d7a0f04f154044fdbffeff6"
+infile4 <- tempfile()
 infile4 <- tempfile()
 try(download.file(inUrl4,infile4,method="curl"))
 if (is.na(file.size(infile4))) download.file(inUrl4,infile4,method="auto")
 
 
-dt4 <-read.csv(infile4,header=F 
-               ,skip=1
-               ,sep=","  
-               , col.names=c(
-                 "DATE",     
-                 "YEAR",     
-                 "JULIAN",     
-                 "RAINFALL..paren.MM.paren.",     
-                 "Field.Comments"    ), check.names=TRUE)
+ dt4 <-read.csv(infile4,header=F
+          ,skip=1
+            ,sep=","
+        , col.names=c(
+                    "DATE",
+                    "YEAR",
+                    "JULIAN",
+                    "HOUR",
+                    "RAINFALL..paren.INCHES.paren.",
+                    "RAINFALL..paren.MM.paren.",
+                    "Field.Comments",
+                    "Field.Comments"    ), check.names=TRUE)
 
 unlink(infile4)
 
 # Fix any interval or ratio columns mistakenly read in as nominal and nominal columns read as numeric or dates read as strings
 
-# attempting to convert dt4$DATE dateTime string to R date structure (date or POSIXct)                                
-tmpDateFormat<-"%m/%d/%Y"
-tmp4DATE<-as.Date(dt4$DATE,format=tmpDateFormat)
+# Define the function to try multiple date formats
+try_multiple_formats <- function(date_column) {
+  formats <- c("%Y-%m-%d", "%m/%d/%Y")
+  for (fmt in formats) {
+    parsed_dates <- as.Date(date_column, format = fmt)
+    if (all(!is.na(parsed_dates))) {
+      return(parsed_dates)
+    }
+  }
+  warning("None of the formats matched.")
+  return(NA)
+}
+
+# Assuming df is your data frame and DATE is the column with date strings
+dt4 <- dt4 %>%
+  mutate(DATE = try_multiple_formats(DATE))
+# attempting to convert dt4$DATE dateTime string to R date structure (date or POSIXct)
+# tmpDateFormat<-"%Y-%m-%d"
+# tmpDateFormat<-"%m/%d/%Y"
+# tmp4DATE<-as.Date(dt4$DATE,format=tmpDateFormat)
 # Keep the new dates only if they all converted correctly
-if(length(tmp4DATE) == length(tmp4DATE[!is.na(tmp4DATE)])){dt4$DATE <- tmp4DATE } else {print("Date conversion failed for dt4$DATE. Please inspect the data and do the date conversion yourself.")}                                                                    
-rm(tmpDateFormat,tmp4DATE) 
+# if(length(tmp4DATE) == length(tmp4DATE[!is.na(tmp4DATE)])){dt4$DATE <- tmp4DATE } else {print("Date conversion failed for dt4$DATE. Please inspect the data and do the date conversion yourself.")}
+# rm(tmpDateFormat,tmp4DATE)
 if (class(dt4$YEAR)!="factor") dt4$YEAR<- as.factor(dt4$YEAR)
 if (class(dt4$JULIAN)!="factor") dt4$JULIAN<- as.factor(dt4$JULIAN)
-if (class(dt4$RAINFALL..paren.MM.paren.)=="factor") dt4$RAINFALL..paren.MM.paren. <-as.numeric(levels(dt4$RAINFALL..paren.MM.paren.))[as.integer(dt4$RAINFALL..paren.MM.paren.) ]               
+if (class(dt4$HOUR)!="factor") dt4$HOUR<- as.factor(dt4$HOUR)
+if (class(dt4$RAINFALL..paren.INCHES.paren.)=="factor") dt4$RAINFALL..paren.INCHES.paren. <-as.numeric(levels(dt4$RAINFALL..paren.INCHES.paren.))[as.integer(dt4$RAINFALL..paren.INCHES.paren.) ]
+if (class(dt4$RAINFALL..paren.INCHES.paren.)=="character") dt4$RAINFALL..paren.INCHES.paren. <-as.numeric(dt4$RAINFALL..paren.INCHES.paren.)
+if (class(dt4$RAINFALL..paren.MM.paren.)=="factor") dt4$RAINFALL..paren.MM.paren. <-as.numeric(levels(dt4$RAINFALL..paren.MM.paren.))[as.integer(dt4$RAINFALL..paren.MM.paren.) ]
 if (class(dt4$RAINFALL..paren.MM.paren.)=="character") dt4$RAINFALL..paren.MM.paren. <-as.numeric(dt4$RAINFALL..paren.MM.paren.)
+if (class(dt4$Field.Comments)!="factor") dt4$Field.Comments<- as.factor(dt4$Field.Comments)
 if (class(dt4$Field.Comments)!="factor") dt4$Field.Comments<- as.factor(dt4$Field.Comments)
 
 # Convert Missing Values to NA for non-dates
@@ -191,23 +222,24 @@ if (class(dt4$Field.Comments)!="factor") dt4$Field.Comments<- as.factor(dt4$Fiel
 
 
 # Here is the structure of the input data frame:
-str(dt4)                            
-attach(dt4)                            
-# The analyses below are basic descriptions of the variables. After testing, they should be replaced.                 
+str(dt4)
+attach(dt4)
+# The analyses below are basic descriptions of the variables. After testing, they should be replaced.
 
 summary(DATE)
 summary(YEAR)
 summary(JULIAN)
+summary(HOUR)
+summary(RAINFALL..paren.INCHES.paren.)
 summary(RAINFALL..paren.MM.paren.)
-summary(Field.Comments) 
-# Get more details on character variables
+summary(Field.Comments)
+summary(Field.Comments)
+                # Get more details on character variables
 
-summary(as.factor(dt4$YEAR)) 
-summary(as.factor(dt4$JULIAN)) 
+summary(as.factor(dt4$YEAR))
+summary(as.factor(dt4$JULIAN))
+summary(as.factor(dt4$HOUR))
 summary(as.factor(dt4$Field.Comments))
-detach(dt4)               
-
-
-
-
+summary(as.factor(dt4$Field.Comments))
+detach(dt4)
 

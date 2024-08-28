@@ -180,3 +180,6 @@ wetdryevv2 <- wetdryev %>%
     TDP_rainev=TDP,
     DIC_rainev=DIC)
 
+wetdryevv2 <- wetdryevv2 %>%
+  group_by(Date) %>%
+  summarise(across(everything(), mean, na.rm = TRUE))

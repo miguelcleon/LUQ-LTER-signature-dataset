@@ -1,0 +1,2137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:eml xmlns:ns0="eml://ecoinformatics.org/eml-2.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packageId="your.package.identifier" system="your.system.identifier" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 eml.xsd">
+  <dataset>
+    <title>Luquillo LTER signautre dataset</title>
+    <creator>
+      <individualName>
+        <givenName>Miguel</givenName>
+        <surName>Leon</surName>
+      </individualName>
+      <organizationName>University of New Hampshire</organizationName>
+      <electronicMailAddress>miguel.leon@unh.edu</electronicMailAddress>
+    </creator>
+    <contact>
+      <individualName>
+        <givenName>Miguel</givenName>
+        <surName>Leon</surName>
+      </individualName>
+      <electronicMailAddress>miguel.leon@unh.edu</electronicMailAddress>
+    </contact>
+    <publisher>
+      <organizationName>Luquillo LTER</organizationName>
+      <electronicMailAddress>miguel.leon@unh.edu</electronicMailAddress>
+      <onlineUrl>https://luquillo.lter.network/</onlineUrl>
+    </publisher>
+    <abstract>
+      <para>This dataset contains meteorological, phenological, and chemical data collected from shrimp ecosystems, with a focus on temperature, rainfall, solar radiation, and various chemical measurements. Data spans from 1975 to 2024, with several gaps and missing data points.</para>
+    </abstract>
+    <keywordSet>
+      <keyword>Meteorology</keyword>
+      <keyword>Phenology</keyword>
+      <keyword>Chemistry</keyword>
+      <keyword>Shrimp Ecosystem</keyword>
+    </keywordSet>
+    <coverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>1975-01-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2024-04-16</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <methods>
+      <methodStep>
+        <description>
+          <para>Data was collected using standard meteorological and chemical monitoring techniques. Temperature and rainfall were recorded daily, while chemical measurements were collected at regular intervals depending on site conditions.</para>
+        </description>
+      </methodStep>
+    </methods>
+    <dataTable>
+      <entityName>LUQ LTER daily signature dataset</entityName>
+      <attributeList>
+        <attribute>
+          <attributeName>Date</attributeName>
+          <attributeDefinition>The date of data collection.</attributeDefinition>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>rainfall_mm</attributeName>
+          <attributeDefinition>Total rainfall in millimeters recorded daily.</attributeDefinition>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>millimeter</standardUnit>
+              </unit>
+              <precision>0.01</precision>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Not Available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>minDailyTempC_belowCanopy</attributeName>
+          <attributeDefinition>Minimum daily temperature (in degrees Celsius) measured below the canopy.</attributeDefinition>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Not Available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>maxDailyTempC_belowCanopy</attributeName>
+          <attributeDefinition>Maximum daily temperature (in degrees Celsius) measured below the canopy.</attributeDefinition>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+            </interval>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Not Available</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        
+
+<attribute>
+  <attributeName>rainfall_mm_nadp</attributeName>
+  <attributeDefinition>Total rainfall in millimeters recorded at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>millimeter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>minDailyTempC_nadp</attributeName>
+  <attributeDefinition>Minimum daily temperature (in degrees Celsius) recorded at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>celsius</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>maxDailyTempC_nadp</attributeName>
+  <attributeDefinition>Maximum daily temperature (in degrees Celsius) recorded at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>celsius</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>solarrad_kj_m2_nadp</attributeName>
+  <attributeDefinition>Daily solar radiation measured in kilojoules per square meter at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>kilojoule_per_square_meter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>ppfd_millimoles_m2_nadp</attributeName>
+  <attributeDefinition>Photosynthetically active radiation measured in micromoles per square meter per second at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <customUnit>micromole_per_square_metersPerSecond</customUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>windspeed_ms_nadp</attributeName>
+  <attributeDefinition>Wind speed measured in meters per second at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>metersPerSecond</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>winddir_degrees_nadp</attributeName>
+  <attributeDefinition>Wind direction measured in degrees at the NADP station.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>degree</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>site</attributeName>
+  <attributeDefinition>The identifier for the site where data was collected.</attributeDefinition>
+  <measurementScale>
+    <nominal>
+      <nonNumericDomain>
+        <textDomain>
+          <definition>Unique site identifier</definition>
+        </textDomain>
+      </nonNumericDomain>
+    </nominal>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>mean_discharge__qp0_m3_s</attributeName>
+  <attributeDefinition>Mean discharge in cubic meters per second for pool 0.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>meterCubedPerSecond</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>max_discharge__qp0_m3_s</attributeName>
+  <attributeDefinition>Maximum discharge in cubic meters per second for pool 0.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>meterCubedPerSecond</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>min_discharge_qp0_m3_s</attributeName>
+  <attributeDefinition>Minimum discharge in cubic meters per second for pool 0.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>meterCubedPerSecond</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Cond_rainev</attributeName>
+  <attributeDefinition>Electrical conductivity in microsiemens per centimeter measured in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microsiemen_per_centimeter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>pH_rainev</attributeName>
+  <attributeDefinition>pH level of rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>pH_unit</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Cl_rainev</attributeName>
+  <attributeDefinition>Chloride concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Na_rainev</attributeName>
+  <attributeDefinition>Sodium concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>K_rainev</attributeName>
+  <attributeDefinition>Potassium concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Mg_rainev</attributeName>
+  <attributeDefinition>Magnesium concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Ca_rainev</attributeName>
+  <attributeDefinition>Calcium concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>NO3N_rainev</attributeName>
+  <attributeDefinition>Nitrate nitrogen concentration in micrograms per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>NH4N_rainev</attributeName>
+  <attributeDefinition>Ammonium nitrogen concentration in micrograms per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>PO4P_rainev</attributeName>
+  <attributeDefinition>Phosphate phosphorus concentration in micrograms per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DOC_rainev</attributeName>
+  <attributeDefinition>Dissolved organic carbon concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DIC_rainev</attributeName>
+  <attributeDefinition>Dissolved inorganic carbon concentration in milligrams per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TDN_rainev</attributeName>
+  <attributeDefinition>Total dissolved nitrogen concentration in micrograms per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TDP_rainev</attributeName>
+  <attributeDefinition>Total dissolved phosphorus concentration in micrograms per liter in rainwater evaporation samples.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Temp_QS</attributeName>
+  <attributeDefinition>Water temperature in degrees Celsius measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>celsius</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Gage_Ht_QS</attributeName>
+  <attributeDefinition>Gage height in meters measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>meter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Cond_QS</attributeName>
+  <attributeDefinition>Electrical conductivity in microsiemens per centimeter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microsiemen_per_centimeter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>pH_QS</attributeName>
+  <attributeDefinition>pH level of water measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>pH_unit</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Cl_QS</attributeName>
+  <attributeDefinition>Chloride concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Na_QS</attributeName>
+  <attributeDefinition>Sodium concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>K_QS</attributeName>
+  <attributeDefinition>Potassium concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Mg_QS</attributeName>
+  <attributeDefinition>Magnesium concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Ca_QS</attributeName>
+  <attributeDefinition>Calcium concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>NO3N_QS</attributeName>
+  <attributeDefinition>Nitrate nitrogen concentration in micrograms per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>NH4N_QS</attributeName>
+  <attributeDefinition>Ammonium nitrogen concentration in micrograms per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>PO4P_QS</attributeName>
+  <attributeDefinition>Phosphate phosphorus concentration in micrograms per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DOC_QS</attributeName>
+  <attributeDefinition>Dissolved organic carbon concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DIC_QS</attributeName>
+  <attributeDefinition>Dissolved inorganic carbon concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TDN_QS</attributeName>
+  <attributeDefinition>Total dissolved nitrogen concentration in micrograms per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TDP_QS</attributeName>
+  <attributeDefinition>Total dissolved phosphorus concentration in micrograms per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TSS_QS</attributeName>
+  <attributeDefinition>Total suspended solids concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>SO4_QS</attributeName>
+  <attributeDefinition>Sulfate concentration in milligrams per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DON_QS</attributeName>
+  <attributeDefinition>Dissolved organic nitrogen concentration in micrograms per liter measured at the QS site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Temp_QP</attributeName>
+  <attributeDefinition>Water temperature in degrees Celsius measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>celsius</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Gage_Ht_QP</attributeName>
+  <attributeDefinition>Gage height in meters measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>meter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Cond_QP</attributeName>
+  <attributeDefinition>Electrical conductivity in microsiemens per centimeter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microsiemen_per_centimeter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>pH_QP</attributeName>
+  <attributeDefinition>pH level of water measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <interval>
+      <unit>
+        <standardUnit>pH_unit</standardUnit>
+      </unit>
+    </interval>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Cl_QP</attributeName>
+  <attributeDefinition>Chloride concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Na_QP</attributeName>
+  <attributeDefinition>Sodium concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>K_QP</attributeName>
+  <attributeDefinition>Potassium concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Mg_QP</attributeName>
+  <attributeDefinition>Magnesium concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>Ca_QP</attributeName>
+  <attributeDefinition>Calcium concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>NO3N_QP</attributeName>
+  <attributeDefinition>Nitrate nitrogen concentration in micrograms per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>NH4N_QP</attributeName>
+  <attributeDefinition>Ammonium nitrogen concentration in micrograms per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>PO4P_QP</attributeName>
+  <attributeDefinition>Phosphate phosphorus concentration in micrograms per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DOC_QP</attributeName>
+  <attributeDefinition>Dissolved organic carbon concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DIC_QP</attributeName>
+  <attributeDefinition>Dissolved inorganic carbon concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TDN_QP</attributeName>
+  <attributeDefinition>Total dissolved nitrogen concentration in micrograms per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TDP_QP</attributeName>
+  <attributeDefinition>Total dissolved phosphorus concentration in micrograms per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>TSS_QP</attributeName>
+  <attributeDefinition>Total suspended solids concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>SO4_QP</attributeName>
+  <attributeDefinition>Sulfate concentration in milligrams per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>milligram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>DON_QP</attributeName>
+  <attributeDefinition>Dissolved organic nitrogen concentration in micrograms per liter measured at the QP site.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>microgram_per_liter</standardUnit>
+      </unit>
+      <precision>0.01</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+
+<attribute>
+  <attributeName>seedsum_ALCLAT</attributeName>
+  <attributeDefinition>Total seeds per square meter for Alclat species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_CASARB</attributeName>
+  <attributeDefinition>Total seeds per square meter for Casarb species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+<attribute>
+  <attributeName>ATYACPUE_POOL0</attributeName>
+  <attributeDefinition>Catch per unit effort for Atya species in pool 0.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>XIPHCPUE_POOL0</attributeName>
+  <attributeDefinition>Catch per unit effort for Xiphophorus species in pool 0.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>MACCPUE_POOL0</attributeName>
+  <attributeDefinition>Catch per unit effort for Macrobrachium species in pool 0.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>ATYACPUE_POOL8</attributeName>
+  <attributeDefinition>Catch per unit effort for Atya species in pool 8.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>XIPHCPUE_POOL8</attributeName>
+  <attributeDefinition>Catch per unit effort for Xiphophorus species in pool 8.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>MACCPUE_POOL8</attributeName>
+  <attributeDefinition>Catch per unit effort for Macrobrachium species in pool 8.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>ATYACPUE_POOL9</attributeName>
+  <attributeDefinition>Catch per unit effort for Atya species in pool 9.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>XIPHCPUE_POOL9</attributeName>
+  <attributeDefinition>Catch per unit effort for Xiphophorus species in pool 9.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>MACCPUE_POOL9</attributeName>
+  <attributeDefinition>Catch per unit effort for Macrobrachium species in pool 9.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>ATYACPUE_POOL15</attributeName>
+  <attributeDefinition>Catch per unit effort for Atya species in pool 15.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>XIPHCPUE_POOL15</attributeName>
+  <attributeDefinition>Catch per unit effort for Xiphophorus species in pool 15.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>MACCPUE_POOL15</attributeName>
+  <attributeDefinition>Catch per unit effort for Macrobrachium species in pool 15.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_effort_unit</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+<attribute>
+  <attributeName>seedsum_CECSCH</attributeName>
+  <attributeDefinition>Total seeds per square meter for Cecsch species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_GUAGUI</attributeName>
+  <attributeDefinition>Total seeds per square meter for Guagui species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_INGLAU</attributeName>
+  <attributeDefinition>Total seeds per square meter for Inglau species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_MANBID</attributeName>
+  <attributeDefinition>Total seeds per square meter for Manbid species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_PALRIP</attributeName>
+  <attributeDefinition>Total seeds per square meter for Palrip species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_PREMON</attributeName>
+  <attributeDefinition>Total seeds per square meter for Premon species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_SCHMOR</attributeName>
+  <attributeDefinition>Total seeds per square meter for Schmør species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_SLOBER</attributeName>
+  <attributeDefinition>Total seeds per square meter for Slober species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seedsum_TABHET</attributeName>
+  <attributeDefinition>Total seeds per square meter for Tabhet species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_ALCLAT</attributeName>
+  <attributeDefinition>Total flowers per square meter for Alclat species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_CASARB</attributeName>
+  <attributeDefinition>Total flowers per square meter for Casarb species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_CECSCH</attributeName>
+  <attributeDefinition>Total flowers per square meter for Cecsch species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_GUAGUI</attributeName>
+  <attributeDefinition>Total flowers per square meter for Guagui species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_INGLAU</attributeName>
+  <attributeDefinition>Total flowers per square meter for Inglau species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_MANBID</attributeName>
+  <attributeDefinition>Total flowers per square meter for Manbid species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_PALRIP</attributeName>
+  <attributeDefinition>Total flowers per square meter for Palrip species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_PREMON</attributeName>
+  <attributeDefinition>Total flowers per square meter for Premon species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_SCHMOR</attributeName>
+  <attributeDefinition>Total flowers per square meter for Schmør species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_SLOBER</attributeName>
+  <attributeDefinition>Total flowers per square meter for Slober species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowersum_TABHET</attributeName>
+  <attributeDefinition>Total flowers per square meter for Tabhet species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_ALCLAT</attributeName>
+  <attributeDefinition>Seeds per square meter for Alclat species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_CASARB</attributeName>
+  <attributeDefinition>Seeds per square meter for Casarb species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_CECSCH</attributeName>
+  <attributeDefinition>Seeds per square meter for Cecsch species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_GUAGUI</attributeName>
+  <attributeDefinition>Seeds per square meter for Guagui species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_INGLAU</attributeName>
+  <attributeDefinition>Seeds per square meter for Inglau species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_MANBID</attributeName>
+  <attributeDefinition>Seeds per square meter for Manbid species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_PALRIP</attributeName>
+  <attributeDefinition>Seeds per square meter for Palrip species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_PREMON</attributeName>
+  <attributeDefinition>Seeds per square meter for Premon species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_SCHMOR</attributeName>
+  <attributeDefinition>Seeds per square meter for Schmør species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_SLOBER</attributeName>
+  <attributeDefinition>Seeds per square meter for Slober species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>seeds.per.m2_TABHET</attributeName>
+  <attributeDefinition>Seeds per square meter for Tabhet species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_ALCLAT</attributeName>
+  <attributeDefinition>Flowers per square meter for Alclat species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_CASARB</attributeName>
+  <attributeDefinition>Flowers per square meter for Casarb species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_CECSCH</attributeName>
+  <attributeDefinition>Flowers per square meter for Cecsch species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_GUAGUI</attributeName>
+  <attributeDefinition>Flowers per square meter for Guagui species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_INGLAU</attributeName>
+  <attributeDefinition>Flowers per square meter for Inglau species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_MANBID</attributeName>
+  <attributeDefinition>Flowers per square meter for Manbid species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_PALRIP</attributeName>
+  <attributeDefinition>Flowers per square meter for Palrip species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_PREMON</attributeName>
+  <attributeDefinition>Flowers per square meter for Premon species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_SCHMOR</attributeName>
+  <attributeDefinition>Flowers per square meter for Schmør species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_SLOBER</attributeName>
+  <attributeDefinition>Flowers per square meter for Slober species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+
+<attribute>
+  <attributeName>flowers.per.m2_TABHET</attributeName>
+  <attributeDefinition>Flowers per square meter for Tabhet species.</attributeDefinition>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>count_per_square_meter</standardUnit>
+      </unit>
+      <precision>1</precision>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>Not Available</codeExplanation>
+  </missingValueCode>
+</attribute>
+      </attributeList>
+      <physical>
+        <objectName>met_shrimp_data_pheno_daily.csv</objectName>
+        <size unit="byte">9846063</size>
+        <formatName>text/csv</formatName>
+		<caseSensitive>no</caseSensitive>
+        <numberOfRecords>18004</numberOfRecords>
+      </physical>
+    </dataTable>
+<dataTable><entityName>LUQ LTER monthly signature dataset</entityName><attributeList><attribute><attributeName>month</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of month.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>LFDP_bird_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of LFDP_bird.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>AMRED_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of AMRED.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BFGRQ_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BFGRQ.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BHEUP_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BHEUP.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BLAWA_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BLAWA.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BQUIT_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BQUIT.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BTBLW_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BTBLW.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BTGNW_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BTGNW.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BWINH_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BWINH.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BWVIR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BWVIR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>BWWAR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of BWWAR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>CAREL_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of CAREL.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>GKNGB_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of GKNGB.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>GNHER_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of GNHER.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>GRMAN_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of GRMAN.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>HOWAR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of HOWAR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>KENWA_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of KENWA.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>LAPEW_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of LAPEW.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>MAGWA_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of MAGWA.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>NOWAT_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of NOWAT.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>ORIOL_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of ORIOL.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PARUW_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PARUW.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PETER_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PETER.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PLPIG_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PLPIG.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRAIW_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRAIW.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRBUL_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRBUL.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRCUC_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRCUC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PREME_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PREME.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRFLY_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRFLY.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRTAN_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRTAN.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRTOD_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRTOD.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>PRWPR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of PRWPR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>RLTSH_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of RLTSH.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>RQDOV_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of RQDOV.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>RTHAW_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of RTHAW.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>SBANI_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of SBANI.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>SCOWL_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of SCOWL.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>SHTAN_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of SHTAN.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>SNPIG_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of SNPIG.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>UNKNO_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of UNKNO.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>UNWAR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of UNWAR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>WATTH_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of WATTH.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>WEVIR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of WEVIR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>WWDOV_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of WWDOV.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>YFGRQ_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of YFGRQ.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>YTWAR_count</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of YTWAR.</attributeDefinition><measurementScale><ratio><unit><standardUnit>count</standardUnit></unit><precision>1</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>minAvgMonthlyTempC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of minAvgMonthlyTempC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>MaxAvgDailyTempC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of MaxAvgDailyTempC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>totrainfall_mm</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of total rainfall_mm.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>totrainfall_mm_nadp</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of total rainfall_mm_nadp.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>MinAvgDailyTempC_nadp</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of MinAvgDailyTempC_nadp.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>MaxAvgDailyTempC_nadp</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of MaxAvgDailyTempC_nadp.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>meandailysolarrad_kj_m2_nadp</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of meandailysolarrad_kj_m2_nadp.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_discharge__qp0_m3_s</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of discharge__qp0_m3_s.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>max_discharge__qp0_m3_s</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of max_discharge__qp0_m3_s.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>min_discharge_qp0_m3_s</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of min_discharge_qp0_m3_s.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_COND</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_COND.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_pH</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_pH.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_Cl</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_Cl.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_Na</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_Na.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_K</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_K.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_Mg</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_Mg.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_Ca</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_Ca.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_NO3N</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_NO3N.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_NH4N</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_NH4N.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_PO4P</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_PO4P.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_DOC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_DOC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_DIC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_DIC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_TDN</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_TDN.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_rainev_TDP</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of rainev_TDP.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_Temp</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_Temp.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_Gage_Ht</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_Gage_Ht.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_COND</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_COND.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_pH</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_pH.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_Cl</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_Cl.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_Na</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_Na.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_K</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_K.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_Mg</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_Mg.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_Ca</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_Ca.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_NO3N</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_NO3N.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_NH4N</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_NH4N.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_PO4P</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_PO4P.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_DOC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_DOC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_DIC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_DIC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_TDN</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_TDN.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_TDP</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_TDP.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_TSS</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_TSS.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_SO4</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_SO4.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqs_DON</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqs_DON.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_Temp</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_Temp.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_Gage_Ht</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_Gage_Ht.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_COND</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_COND.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_pH</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_pH.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_Cl</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_Cl.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_Na</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_Na.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_K</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_K.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_Mg</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_Mg.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_Ca</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_Ca.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_NO3N</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_NO3N.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_NH4N</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_NH4N.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_PO4P</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_PO4P.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_DOC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_DOC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_DIC</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_DIC.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_TDN</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_TDN.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_TDP</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_TDP.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_TSS</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_TSS.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_SO4</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_SO4.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute><attribute><attributeName>mean_streamqp_DON</attributeName><attributeDefinition>Sum count, monthly mean, minimum, or maximum of streamqp_DON.</attributeDefinition><measurementScale><ratio><unit><standardUnit>dimensionless</standardUnit></unit><precision>0.01</precision></ratio></measurementScale><missingValueCode><code>NA</code><codeExplanation>Not Available</codeExplanation></missingValueCode></attribute></attributeList><physical><objectName>met_shrimp_data_pheno_monthly.csv</objectName><size unit="MB">0.8</size><formatName>text/csv</formatName><distribution><online><url>https://luquillo.lter.network/</url></online></distribution></physical></dataTable></ns0:eml>
+  </dataset>
