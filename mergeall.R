@@ -242,8 +242,6 @@ print(sum(duplicated(summary(df_met_shrimp$Date))))
 write.csv(df_met_shrimp, file = "met_shrimp_data_dailywithEVRainAndQSChem.csv", row.names = FALSE, na = "")
 
 
-print(sum(duplicated(summary(df_daily_seeds_flowers_plantid$Date))))
-
 df_met_shrimp_pheno <- df_met_shrimp %>%
   left_join(phenoseedsAndFlowers, by = "Date")
 
@@ -350,10 +348,6 @@ df_met_shrimp_pheno_birds_chem_month <- df_met_shrimp_pheno_birds_chem %>%
     meanppfd_millimoles_m2_nadp = mean(ppfd_millimoles_m2_nadp  ,na.rm = TRUE),
     meanwindspeed_ms_nadp = mean(windspeed_ms_nadp  ,na.rm = TRUE),
     meanwinddir_degrees_nadp = mean(winddir_degrees_nadp  ,na.rm = TRUE),
-    # meanstreamqs_Temp = mean(Temp_QS, na.rm = TRUE),
-    # meanstreamqs_Gage_Ht = mean(Gage_Ht_QS, na.rm = TRUE),
-    # meanstreamqs_COND = mean(Cond_QS, na.rm = TRUE),
-    # meanstreamqs_pH = mean(pH_QS, na.rm = TRUE),
     mean_discharge__qp0_m3_s = mean(mean_discharge__qp0_m3_s, na.rm = TRUE),
     max_discharge__qp0_m3_s = max(max_discharge__qp0_m3_s, na.rm=TRUE ),
     min_discharge_qp0_m3_s = min(min_discharge_qp0_m3_s, na.rm=TRUE),
@@ -384,6 +378,7 @@ df_met_shrimp_pheno_birds_chem_month <- df_met_shrimp_pheno_birds_chem %>%
     mean_streamqs_NO3N= mean(NO3N_QS, na.rm=TRUE),
     mean_streamqs_NH4N= mean(NH4N_QS, na.rm=TRUE),
     mean_streamqs_PO4P= mean(PO4P_QS, na.rm=TRUE),
+    mean_streamqs_SiO2= mean(SiO2_QS, na.rm=TRUE),
     mean_streamqs_DOC= mean(DOC_QS, na.rm=TRUE),
     mean_streamqs_DIC= mean(DIC_QS, na.rm=TRUE),
     mean_streamqs_TDN= mean(TDN_QS, na.rm=TRUE),
@@ -402,6 +397,7 @@ df_met_shrimp_pheno_birds_chem_month <- df_met_shrimp_pheno_birds_chem %>%
     mean_streamqp_Mg= mean(Mg_QP, na.rm=TRUE),
     mean_streamqp_Ca= mean(Ca_QP, na.rm=TRUE),
     mean_streamqp_NO3N= mean(NO3N_QP, na.rm=TRUE),
+    mean_streamqp_SiO2= mean(SiO2_QP, na.rm=TRUE),
     mean_streamqp_NH4N= mean(NH4N_QP, na.rm=TRUE),
     mean_streamqp_PO4P= mean(PO4P_QP, na.rm=TRUE),
     mean_streamqp_DOC= mean(DOC_QP, na.rm=TRUE),
@@ -413,7 +409,7 @@ df_met_shrimp_pheno_birds_chem_month <- df_met_shrimp_pheno_birds_chem %>%
     mean_streamqp_SO4= mean(SO4_QP, na.rm=TRUE),
     mean_streamqp_DON= mean(DON_QP, na.rm=TRUE),
     # Monthly mean for columns starting with flower.per.m2_ or seeds.per.m2_
-    across(starts_with("flowers.per.m2_"), mean, na.rm = TRUE),
+    # across(starts_with("flowers.per.m2_"), mean, na.rm = TRUE),
     across(starts_with("seeds.per.m2_"), mean, na.rm = TRUE),
     across(starts_with("seedsum"), sum, na.rm = TRUE),
     across(starts_with("flowersum"), sum, na.rm = TRUE)

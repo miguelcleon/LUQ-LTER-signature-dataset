@@ -37,8 +37,8 @@ phenoedi_seeds <- phenoedi_seeds %>%
   rename(Plant.ID = SPECIES)
 
 
-seedsperfruit <- read_csv('./Luquillo_seed_multipliers.csv')
-phenoedi_seeds <- merge(x=phenoedi_seeds, y=seedsperfruit, 
+seedsperfruit <- read_csv('./newseedmultipliers.csv')
+phenoedi_seeds <- merge(x=phenoedi_seeds, y=seedsperfruit,
                         by= "Plant.ID", all.x=TRUE)
 print("drop species without a seed multiplier? - yes for now")
 speciescodes <- unique(seedsperfruit$Plant.ID)
@@ -62,18 +62,26 @@ phenoedi_seeds$seeds <- ifelse(phenoedi_seeds$CODE %in% c(4,5), phenoedi_seeds$N
 
 
 
-print("aggregate per-species per day over all baskets") 
+print("aggregate per-species per day over all baskets")
 
 phenoedi_seeds_test <- phenoedi_seeds %>% filter(Plant.ID=="BUCTET") %>%
                         filter(Date=='1995-04-04')
 
+
+unique_values <- phenoedi_seeds %>%
+  select(Plant.ID) %>%
+  distinct()
+
+# Print the unique values
+print(unique_values)
+
 phenoseedsAndFlowers <- phenoedi_seeds %>%
   mutate(totalTrapArea = Seed_Trap_Area_m2*120)%>%
   group_by( Plant.ID, Date) %>%
-  reframe(seedsum = sum(seeds, na.rm = TRUE), 
+  reframe(seedsum = sum(seeds, na.rm = TRUE),
                    flowersum = sum(flowers, na.rm = TRUE),
                    seeds.per.m2 = seedsum/totalTrapArea,
-                   flowers.per.m2=flowersum/totalTrapArea) 
+                   flowers.per.m2=flowersum/totalTrapArea)
 
 phenoseedsAndFlowers <- phenoseedsAndFlowers %>% distinct(Plant.ID, Date, .keep_all = TRUE)
 
@@ -100,10 +108,13 @@ print('we now have a dataframe phenoseedsAndFlowers with counts of seeds and flo
 # SCHMOR
 # SLOBER
 # TABHET
-# SMIDOM
 # PALRIP
-species_list <- c("PALRIP", "CISVER", "PHYRIV", "IPOTL", "SMIDOM",
-                  "ALCLAT", "CASARB", "CECSCH", "DECEXC", "GUAGUI",
+#missing from the final file
+# SMIDOM
+# DACEXC
+# IPOTIL
+species_list <- c("PALRIP", "CISVER", "PHYRIV", "IPOTIL", "SMIDOM",
+                  "ALCLAT", "CASARB", "CECSCH", "DACEXC", "GUAGUI",
                   "INGLAU", "MANBID", "PREMON", "SCHMOR", "SLOBER",
                   "TABHET", "SMIDOM")
 
@@ -116,12 +127,13 @@ phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
 phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
   pivot_wider(
     names_from = Plant.ID,  # Create columns based on species
-    values_from = c(seedsum, flowersum, seeds.per.m2, flowers.per.m2),  # Fill cells with the respective metrics
+    values_from = c(seedsum, flowersum, seeds.per.m2),  # Fill cells with the respective metrics
     names_sep = "_"  # To differentiate between the different metrics (seedsum, flowersum, etc.)
   )
-
+phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
+  select(-flowers.per.m2)
 # Remove any rows with NA values if necessary
 phenoseedsAndFlowers <- phenoseedsAndFlowers %>%
-  drop_na()
+  filter(rowSums(is.na(.)) != ncol(.))
 
 summary(phenoseedsAndFlowers)
