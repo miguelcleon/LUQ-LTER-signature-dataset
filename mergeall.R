@@ -277,7 +277,7 @@ write.csv(df_met_shrimp_pheno, file = "met_data_daily_pheno_shrimp_withEVRainAnd
 
 source("./LFDPBirdspostprocess.R")
 print(sum(duplicated(summary(LFDPBirds$Date))))
-print(sum(duplicated(sumdmary(LFDPBirds$Date))))
+
 LFDPBirds <- LFDPBirds %>%
   group_by(Date) %>%
   summarise_all(sum, na.rm = TRUE)
@@ -368,8 +368,8 @@ df_met_shrimp_pheno_birds_chem_month <- df_met_shrimp_pheno_birds_chem %>%
     MaxMonthlyTempC_belowCanopy = ifelse(is.infinite(max(maxDailyTempC_belowCanopy, na.rm = TRUE)), NA, max(maxDailyTempC_belowCanopy, na.rm = TRUE)),
     totrainfall_mm = sum(rainfall_mm,na.rm = TRUE),
     totrainfall_mm_nadp  =sum(rainfall_mm_nadp,na.rm = TRUE),
-   minMonthlyTempC_belowCanopy = ifelse(is.infinite(min(minDailyTempC_belowCanopy, na.rm = TRUE)), NA, min(minDailyTempC_belowCanopy, na.rm = TRUE)),
-    MaxMonthlyTempC_belowCanopy = ifelse(is.infinite(max(maxDailyTempC_belowCanopy, na.rm = TRUE)), NA, max(maxDailyTempC_belowCanopy, na.rm = TRUE)),
+    MinMonthlyTempC_nadp = ifelse(is.infinite(min(minDailyTempC_nadp, na.rm = TRUE)), NA, min(minDailyTempC_nadp, na.rm = TRUE)),
+    MaxMonthlyTempC_nadp = ifelse(is.infinite(max(maxDailyTempC_nadp, na.rm = TRUE)), NA, max(maxDailyTempC_nadp, na.rm = TRUE)),
     meanmonthlysolarrad_kj_m2_nadp = mean(solarrad_kj_m2_nadp  ,na.rm = TRUE),
     meanppfd_millimoles_m2_nadp = mean(ppfd_millimoles_m2_nadp  ,na.rm = TRUE),
     meanwindspeed_ms_nadp = mean(windspeed_ms_nadp  ,na.rm = TRUE),
@@ -587,9 +587,8 @@ print(number_of_rows)
 write.csv(df_met_shrimp_pheno_birds_chem_litter_month, file = "LUQ_signature_monthly.csv", row.names = FALSE)
 
 df_met_shrimp_pheno_birds_chem_litter <- df_met_shrimp_pheno_birds_chem_litter %>%
-  select(-month.x)
-df_met_shrimp_pheno_birds_chem_litter <- df_met_shrimp_pheno_birds_chem_litter %>%
-  select(-month.y)
+  select(-month)
+
 write.csv(df_met_shrimp_pheno_birds_chem_litter, file = "LUQ_signature_daily.csv", row.names = FALSE)
 
 #make monthly summary
