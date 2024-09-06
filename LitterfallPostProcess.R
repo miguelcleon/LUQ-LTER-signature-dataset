@@ -7,6 +7,8 @@ ctelitterfall <- dt1
 # total area of 1,200 m2
 # 1000 / 2400 = 0.4166666666666667
 # 10 baskets in each plot
+# because both studies had 10 baskets we think stayed the same size no correction is needed to compare the
+# values from the two studies.
 ctelitterfall$Date <- as.Date(ctelitterfall$Collection_Date, format="%Y-%m-%d")
 summary(ctelitterfall)
 
@@ -48,3 +50,25 @@ MRCEEVlitterfall <- MRCEEVlitterfall %>%
          Comments.about.samples=Comments.about.samples)
 summary(ctelitterfall)
 summary(MRCEEVlitterfall)
+
+ctelitterfall <- ctelitterfall %>%
+  rename(weight.of.misc.in.grams = weight.of.miscelaneous.plant.parts)
+
+MRCEEVlitterfall <- MRCEEVlitterfall %>%
+  rename(weight.of.misc.in.grams = Weight.of.Misc)
+
+# Now both dataframes have similar column names
+
+# Append the two dataframes using bind_rows
+combined_litterfall <- bind_rows(ctelitterfall, MRCEEVlitterfall)
+
+# View the combined summary to ensure the data has been appended properly
+summary(combined_litterfall)
+
+combined_litterfall_daily <- combined_litterfall %>%
+  group_by(Date) %>%
+  summarise(across(starts_with("weight"), sum, na.rm = TRUE),
+            fruits.and.seeds.in.grams = sum(fruits.and.seeds.in.grams, na.rm = TRUE),
+            Number.of.days.of.litter.accumulation = sum(Number.of.days.of.litter.accumulation, na.rm = TRUE),
+            .groups = 'drop')
+

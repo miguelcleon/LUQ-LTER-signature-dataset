@@ -205,9 +205,28 @@ QPChemv2 <- QPChemv2 %>%
   group_by(Date) %>%
   summarise(across(everything(), mean, na.rm = TRUE))
 
+NO3count<- QPChemv2 %>%
+  summarize(non_na_count = sum(!is.na(Temp_QP)))
+
+NO3count<- QPChem %>%
+  summarize(non_na_count = sum(!is.na(NO3.hyphen.N)))
+
+NO3count
+
+
+tempcount<- QPChemv2 %>%
+  summarize(non_na_count = sum(!is.na(Temp_QP)))
+
+tempcount
 
 pheno_met_sub3 <- pheno_met_sub3 %>%
   left_join(QPChemv2, by = "Date")
+
+
+tempcount<- pheno_met_sub3 %>%
+  summarize(non_na_count = sum(!is.na(Temp_QP)))
+
+tempcount
 
 # write.csv(pheno_met_sub2, file = "met_data_daily.csv", row.names = FALSE)
 
@@ -229,6 +248,9 @@ source("./Shrimp54PostProcessKeepPools.R")
 df_met_shrimp <- pheno_met_sub3 %>%
   left_join(shrimpdata, by = "Date")
 
+
+
+
 # df_met_shrimp$XIPHCPUE <- as.numeric(df_met_shrimp$XIPHCPUE)
 # df_met_shrimp$ATYACPUE <- as.numeric(df_met_shrimp$ATYACPUE)
 # df_met_shrimp$MACCPUE <- as.numeric(df_met_shrimp$MACCPUE)
@@ -245,6 +267,8 @@ write.csv(df_met_shrimp, file = "met_shrimp_data_dailywithEVRainAndQSChem.csv", 
 df_met_shrimp_pheno <- df_met_shrimp %>%
   left_join(phenoseedsAndFlowers, by = "Date")
 
+
+
 print(sum(duplicated(summary(df_met_shrimp_pheno$Date))))
 
 write.csv(df_met_shrimp_pheno, file = "met_data_daily_pheno_shrimp_withEVRainAndQSChem.csv", row.names = FALSE, na = "")
@@ -253,6 +277,7 @@ write.csv(df_met_shrimp_pheno, file = "met_data_daily_pheno_shrimp_withEVRainAnd
 
 source("./LFDPBirdspostprocess.R")
 print(sum(duplicated(summary(LFDPBirds$Date))))
+print(sum(duplicated(sumdmary(LFDPBirds$Date))))
 LFDPBirds <- LFDPBirds %>%
   group_by(Date) %>%
   summarise_all(sum, na.rm = TRUE)
@@ -261,6 +286,7 @@ LFDPBirds <- LFDPBirds %>%
   rename(total_bird_count = TOTAL)
 
 df_met_shrimp_pheno_birds_chem <- left_join(df_met_shrimp_pheno, LFDPBirds, by=c("Date"))
+
 
 print(sum(duplicated(summary(df_met_shrimp_pheno_birds_chem$Date))))
 
@@ -338,12 +364,12 @@ df_met_shrimp_pheno_birds_chem_month <- df_met_shrimp_pheno_birds_chem %>%
     ATYACPUE_POOL15 = sum(ATYACPUE_POOL15, na.rm = TRUE),
     XIPHCPUE_POOL15 = sum(XIPHCPUE_POOL15, na.rm = TRUE),
     MACCPUE_POOL15 = sum(MACCPUE_POOL15, na.rm = TRUE),
-    minMonthlyTempC_belowCanopy = min(minDailyTempC_belowCanopy ,na.rm = TRUE),
-    MaxMonthlyTempC_belowCanopy = max(maxDailyTempC_belowCanopy ,na.rm = TRUE),
+    minMonthlyTempC_belowCanopy = ifelse(is.infinite(min(minDailyTempC_belowCanopy, na.rm = TRUE)), NA, min(minDailyTempC_belowCanopy, na.rm = TRUE)),
+    MaxMonthlyTempC_belowCanopy = ifelse(is.infinite(max(maxDailyTempC_belowCanopy, na.rm = TRUE)), NA, max(maxDailyTempC_belowCanopy, na.rm = TRUE)),
     totrainfall_mm = sum(rainfall_mm,na.rm = TRUE),
     totrainfall_mm_nadp  =sum(rainfall_mm_nadp,na.rm = TRUE),
-    MinMonthlyTempC_nadp = min(minDailyTempC_nadp ,na.rm = TRUE),
-    MaxMonthlyTempC_nadp = max(maxDailyTempC_nadp  ,na.rm = TRUE),
+   minMonthlyTempC_belowCanopy = ifelse(is.infinite(min(minDailyTempC_belowCanopy, na.rm = TRUE)), NA, min(minDailyTempC_belowCanopy, na.rm = TRUE)),
+    MaxMonthlyTempC_belowCanopy = ifelse(is.infinite(max(maxDailyTempC_belowCanopy, na.rm = TRUE)), NA, max(maxDailyTempC_belowCanopy, na.rm = TRUE)),
     meanmonthlysolarrad_kj_m2_nadp = mean(solarrad_kj_m2_nadp  ,na.rm = TRUE),
     meanppfd_millimoles_m2_nadp = mean(ppfd_millimoles_m2_nadp  ,na.rm = TRUE),
     meanwindspeed_ms_nadp = mean(windspeed_ms_nadp  ,na.rm = TRUE),
@@ -437,6 +463,22 @@ df_met_shrimp_pheno_birds_chem_month$min_discharge_qp0_m3_s[is_inf] <- NA
 summary(df_met_shrimp_pheno_birds_chem_month)
 # write.csv(df_met_shrimp_pheno_birds_chem_month, file = "met_data_monthly_pheno_shrimp_birds_withEVRainAndQSChem.csv", row.names = FALSE, na = "")
 
+tempcount<- df_met_shrimp_pheno_birds_chem_month %>%
+  summarize(non_na_count = sum(!is.na(mean_streamqp_Temp)))
+
+tempcount
+# Temp_QP
+
+tempcount<- df_met_shrimp_pheno_birds_chem %>%
+  summarize(non_na_count = sum(!is.na(Temp_QP)))
+
+tempcount
+
+tempcount <- df_met_shrimp_pheno_birds_chem %>%
+  filter(lubridate::year(Date) == 1990 & lubridate::month(Date) == 7) %>%
+  summarize(non_na_count = sum(!is.na(Temp_QP)))
+
+tempcount
 
 # qp0discharge_month <- qp0discharge_month %>% select(month, mean_discharge__qp0_m3_s, 
 #                                                     max_discharge__qp0_m3_s, min_discharge_qp0_m3_s)
@@ -494,11 +536,61 @@ missing_in_df2 <- setdiff(colnames(df_met_shrimp_pheno_birds_chem), colnames(df_
 # Print the missing columns
 print(missing_in_df2)
 
-write.csv(df_met_shrimp_pheno_birds_chem, file = "met_shrimp_data_pheno_daily.csv", row.names = FALSE)
+source("./LitterfallPostProcess.R")
+
+number_of_rows <- nrow(df_met_shrimp_pheno_birds_chem)
+
+# Print the result
+print(number_of_rows)
+
+df_met_shrimp_pheno_birds_chem_litter <- df_met_shrimp_pheno_birds_chem %>%
+  left_join(combined_litterfall_daily, by = "Date")
+
+number_of_rows <- nrow(df_met_shrimp_pheno_birds_chem_litter)
+
+# Print the result
+print(number_of_rows)
+
+combined_litterfall_daily$month <-floor_date(combined_litterfall_daily$Date, "month")
+
+# Step 2: Group by Year and Month and then summarize the data
+monthly_litterfall <- combined_litterfall_daily %>%
+  group_by(month) %>%
+  summarise(across(starts_with("weight"), sum, na.rm = TRUE),  # Summing weight columns
+            fruits.and.seeds.in.grams = sum(fruits.and.seeds.in.grams, na.rm = TRUE),
+            Number.of.days.of.litter.accumulation = sum(Number.of.days.of.litter.accumulation, na.rm = TRUE),
+            .groups = 'drop')
+number_of_rows <- nrow(monthly_litterfall)
+
+# Print the result
+print(number_of_rows)
+
+number_of_rows <- nrow(df_met_shrimp_pheno_birds_chem_month)
+
+# Print the result
+print(number_of_rows)
 
 
-write.csv(df_met_shrimp_pheno_birds_chem_month, file = "met_shrimp_data_pheno_monthly.csv", row.names = FALSE)
 
+df_met_shrimp_pheno_birds_chem_litter_month <- left_join(df_met_shrimp_pheno_birds_chem_month,
+                       monthly_litterfall,
+                       by = c("month"))
+
+# View the merged data
+summary(df_met_shrimp_pheno_birds_chem_litter_month)
+
+number_of_rows <- nrow(df_met_shrimp_pheno_birds_chem_litter_month)
+
+# Print the result
+print(number_of_rows)
+
+write.csv(df_met_shrimp_pheno_birds_chem_litter_month, file = "LUQ_signature_monthly.csv", row.names = FALSE)
+
+df_met_shrimp_pheno_birds_chem_litter <- df_met_shrimp_pheno_birds_chem_litter %>%
+  select(-month.x)
+df_met_shrimp_pheno_birds_chem_litter <- df_met_shrimp_pheno_birds_chem_litter %>%
+  select(-month.y)
+write.csv(df_met_shrimp_pheno_birds_chem_litter, file = "LUQ_signature_daily.csv", row.names = FALSE)
 
 #make monthly summary
 
@@ -572,7 +664,7 @@ df_met_shrimp_phenmonthly_long <- df_met_shrimp_pheno_birds_chem_month %>%
   drop_na() %>%  # Remove rows with NA values
   filter(value != 0)
 
-write.csv(df_met_shrimp_phenmonthly_long, file = "df_met_shrimp_pheno_monthly_long.csv", row.names = FALSE)
+write.csv(df_met_shrimp_phenmonthly_long, file = "LUQ_signature_monthly_long_format.csv", row.names = FALSE)
 
 subsig2 <- df_met_shrimp_phenmonthly_long %>% filter(variable %in% c('minAvgMonthlyTempC', 'mean_rainev_Cl'))
 subsigdata <- subsig2 %>% pivot_wider(

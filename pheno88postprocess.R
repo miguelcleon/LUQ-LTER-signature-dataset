@@ -90,29 +90,26 @@ phenoseedsAndFlowers$Date <- as.Date(phenoseedsAndFlowers$Date, "%Y-%m-%d")
 print('we now have a dataframe phenoseedsAndFlowers with counts of seeds and flowers per species per day')
 
 # Show a species that has become abundant and one that has become rare
-# In decline - PALRIP shrub - seeding
-# CISVER - a vine
-# PHYRIV - understory herb hurricane response
-# IPOTL Morning glory vine - responding to hurricanes
-# SMIDOM - understory shrub is doing well  - seeding
+# In decline - PALRIP- Palicourea riparia-  shrub - seeding
+# CISVER - Cissus verticillata- a vine
+# PHYRIV - Phytolacca rivinoides- understory herb hurricane response
+# IPOTL -Ipomoea tiliacea- Morning glory vine - responding to hurricanes
+# SMIDOM - Smilax domingensis- understory shrub is doing well  - seeding
 #
 #
-# ALCLAT
-# CASARB
-# CECSCH
-# DECEXC
-# GUAGUI
-# INGLAU
-# MANBID
-# PREMON
-# SCHMOR
-# SLOBER
-# TABHET
-# PALRIP
-#missing from the final file
-# SMIDOM
-# DACEXC
-# IPOTIL
+# ALCLAT -Alchornea latifolia
+# CASARB - Casearia arborea
+# CECSCH - Cecropia schreberiana
+# DACEXC - Dacryodes excelsa
+# GUAGUI - Guarea guidonia
+# INGLAU - Inga laurina
+# MANBID - Manilkara bidentata
+# PREMON - Prestoea montana
+# SCHMOR - Schefflera morototoni
+# SLOBER - Sloanea berteriana
+# TABHET - Tabebuia heterophylla
+# PALRIP - Palicourea riparia
+
 species_list <- c("PALRIP", "CISVER", "PHYRIV", "IPOTIL", "SMIDOM",
                   "ALCLAT", "CASARB", "CECSCH", "DACEXC", "GUAGUI",
                   "INGLAU", "MANBID", "PREMON", "SCHMOR", "SLOBER",
