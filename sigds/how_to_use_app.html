@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Use the Luquillo LTER Signature Dataset Explorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .note {
+            background-color: #f9e79f;
+            padding: 10px;
+            border-left: 5px solid #f1c40f;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>How to Use the Luquillo LTER Signature Dataset Explorer</h1>
+
+<p>Welcome to the Luquillo Long-Term Ecological Research (LTER) Signature Dataset Explorer! This Shiny app allows you to explore and visualize long-term ecological measurements from the Luquillo Experimental Forest in Puerto Rico.</p>
+
+<h2>Getting Started</h2>
+
+<div class="step">
+    <h3>1. Selecting Data Frequency</h3>
+    <p>In the sidebar panel on the left, you'll find the <strong>Select data frequency</strong> options:</p>
+    <ul>
+        <li><strong>Daily</strong>: Use the daily dataset.</li>
+        <li><strong>Monthly</strong>: Use the monthly dataset.</li>
+    </ul>
+    <p>Select the desired data frequency to load the corresponding dataset.</p>
+</div>
+
+<div class="step">
+    <h3>2. Choosing Variables to Plot</h3>
+    <p>Under <strong>Pick one or more variables to plot</strong>, select one or more variables from the dropdown list. These variables will be used for plotting and data analysis.</p>
+    <p>You can select multiple variables by holding down the <code>Ctrl</code> (Windows) or <code>Command</code> (Mac) key while clicking on the variable names.</p>
+</div>
+
+<div class="step">
+    <h3>3. Normalizing Data</h3>
+    <p>If you wish to normalize the selected variables between 0 and 1, check the <strong>Normalize values between 0 and 1</strong> checkbox.</p>
+    <p>Normalization can help in comparing variables that are on different scales.</p>
+</div>
+
+<div class="step">
+    <h3>4. Plotting the Data</h3>
+    <p>Click the <strong>Plot the data</strong> button to generate the plot based on your selections.</p>
+    <p>The plot will display in the main panel on the right. You can interact with the plot by hovering over data points to see detailed information.</p>
+</div>
+
+<div class="step">
+    <h3>5. Viewing Data Summary</h3>
+    <p>Below the plot, a data summary is displayed. It provides statistical information about the selected variables.</p>
+</div>
+
+<div class="step">
+    <h3>6. Downloading the Data</h3>
+    <p>To download the processed data, click the <strong>Download Data</strong> button. The downloaded CSV file will include:</p>
+    <ul>
+        <li>The <code>Date</code> column.</li>
+        <li>The selected variables.</li>
+        <li>Data starting from the first date where data is available for the selected variables.</li>
+    </ul>
+</div>
+
+<h2>Understanding the App Features</h2>
+
+<div class="step">
+    <h3>Data Cleaning</h3>
+    <p>The app automatically handles missing values and zeros in the data:</p>
+    <ul>
+        <li>Zeros in numeric columns are replaced with <code>NA</code>.</li>
+        <li>Leading rows where all selected variables are <code>NA</code> are removed.</li>
+    </ul>
+</div>
+
+<div class="step">
+    <h3>Date Parsing</h3>
+    <p>The app parses dates from the selected dataset and ensures they are in a consistent format for plotting and analysis.</p>
+</div>
+
+<div class="step">
+    <h3>Interactive Plotting</h3>
+    <p>The plot generated is interactive, thanks to Plotly integration:</p>
+    <ul>
+        <li>Hover over data points to see tooltips with detailed information.</li>
+        <li>Legend entries allow you to toggle the visibility of variables.</li>
+        <li>You can zoom in and out using the toolbar or by selecting an area on the plot.</li>
+    </ul>
+</div>
+
+<h2>Troubleshooting</h2>
+
+<div class="note">
+    <h3>Note:</h3>
+    <p>If you encounter any issues while using the app, consider the following tip:</p>
+    <ul>
+        <li>If the plot does not display, verify that you have selected at least one variable and clicked the <strong>Plot the data</strong> button.</li>
+    </ul>
+</div>
+
+<h2>About the Dataset</h2>
+
+<p>This application uses data from the <a href="https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-luq&identifier=236" target="_blank">Luquillo Long-Term Ecological Research (LTER) Signature Dataset</a>. The dataset contains long-term ecological measurements from the Luquillo Experimental Forest in Puerto Rico.</p>
+
+<p>The Luquillo LTER program focuses on understanding the effects of disturbances (such as hurricanes and land-use changes) on tropical forest ecosystems. The signature dataset includes a variety of ecological variables measured over extended periods.</p>
+
+<h2>Contact Information</h2>
+
+<p>If you have any questions or need further assistance, please contact the Luquillo LTER Information Manager at <a href="mailto:miguel.leon@unh.edu">miguel.leon@unh.edu</a>.</p>
+
+</body>
+</html>
